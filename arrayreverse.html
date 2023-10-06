@@ -6,32 +6,28 @@
     <title>Display Array Elements in Reverse</title>
 </head>
 <body>
-    <center>
-        <h1>Display Array Elements in Reverse</h1>
-        <form id="arrayForm">
-            <label for="elements">Enter array elements:</label><br>
-            <input type="text" id="elements" name="elements"><br><br>
-            <input type="button" value="Display Array in Reverse" onclick="displayArrayInReverse()">
-        </form>
+        <label>Enter array:</label><br>
+        <input type="text" id="userinput"><br><br>
+        <input type="button" value="Array in Reverse" onclick="displayReverse()">
+
         <p id="result"></p>
-    </center>
+
 
     <script>
-        function displayArrayInReverse() 
+        function displayReverse() 
         {
-            var inputString=document.getElementById('elements').value;
-            var inputArray=inputString.split(",");
-
-            var displayString="Array elements in reverse:";
-            for(var i=inputArray.length-1;i>=0;i--) 
+            var input=document.getElementById('userinput').value;
+            var array=input.split(",");
+            var displayArray
+            for(var i=array.length-1;i>=0;i--) 
             {
-                displayString+=inputArray[i];
+                displayArray+=array[i];
                 if(i>0) 
                 {
-                    displayString+=", ";
+                    displayArray+=", ";
                 }
             }
-            document.getElementById('result').textContent=displayString;
+            window.alert(displayArray);
         }
     </script>
 </body>
